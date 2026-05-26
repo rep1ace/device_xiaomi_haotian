@@ -83,6 +83,30 @@ blob_fixups: blob_fixups_user_type = {
             'android.hardware.sensors-V2-ndk.so',
             'android.hardware.sensors-V3-ndk.so'
         ),
+    (
+        'odm/bin/hw/vendor.qti.camera.provider-service_64',
+        'odm/lib64/com.xiaomi.plugin.ecdengine.so',
+        'odm/lib64/libcamxcoreutils.so',
+        'odm/lib64/libcamxods.so',
+        'odm/lib64/libmicamera_aidl_provider.so',
+        'odm/lib64/libmicamera_hal_core.so',
+        'odm/lib64/libsimulation.so',
+        'odm/lib64/camera/plugins/com.xiaomi.plugin.anchor.so',
+        'odm/lib64/camera/plugins/com.xiaomi.plugin.offlineawbideal.so',
+        'odm/lib64/camera/plugins/com.xiaomi.plugin.offlineb2y.so',
+        'odm/lib64/camera/plugins/com.xiaomi.plugin.offlineformatconvertor.so',
+        'odm/lib64/camera/plugins/com.xiaomi.plugin.offlinehdrraw2y.so',
+        'odm/lib64/camera/plugins/com.xiaomi.plugin.offlineheic.so',
+        'odm/lib64/camera/plugins/com.xiaomi.plugin.offlinei2y.so',
+        'odm/lib64/camera/plugins/com.xiaomi.plugin.offlinejpeg.so',
+        'odm/lib64/camera/plugins/com.xiaomi.plugin.offlinemfnr.so',
+        'odm/lib64/camera/plugins/com.xiaomi.plugin.offlinemlawb.so',
+        'odm/lib64/camera/plugins/com.xiaomi.plugin.offlinetintless.so',
+        'odm/lib64/camera/plugins/com.xiaomi.plugin.offlinetintlesshdr.so',
+        'odm/lib64/camera/plugins/com.xiaomi.plugin.offlineyuvreprocess.so',
+        'odm/lib64/camera/plugins/com.xiaomi.plugin.offlineyuvsplit.so',
+    ): blob_fixup()
+        .binary_regex_replace(b'libtinyxml2.so\0', b'libtinyxmlQ.so\0'),
     'vendor/lib64/libultrahdr_haotian.so': blob_fixup()
         .replace_needed(
             'libjpegencoder.so',
@@ -101,7 +125,27 @@ blob_fixups: blob_fixups_user_type = {
         'vendor/lib64/libcamera2ndk_vendor.so',
     ): blob_fixup()
         .replace_needed('android.frameworks.cameraservice.device-V2-ndk.so', 'android.frameworks.cameraservice.device-V3-ndk.so')
-        .replace_needed('android.frameworks.cameraservice.service-V2-ndk.so', 'android.frameworks.cameraservice.service-V3-ndk.so')
+        .replace_needed('android.frameworks.cameraservice.service-V2-ndk.so', 'android.frameworks.cameraservice.service-V3-ndk.so'),
+    'odm/etc/camera/xiaomi/ecoMetaExtensionExt.json': blob_fixup()
+        # Force Xiaomi's eco engine to keep third-party JPEG_R disabled even
+        # when /data/property still carries an older persisted value of 1.
+        .regex_replace(
+            r'("Signature":"MiviThirdJpegr"[\s\S]*?"Name": "persist\.vendor\.camera\.sdk\.third\.jpegr\.enable",\s*"Value": )\["", "0"\]',
+            r'\1["", "0", "1"]'
+        )
+        .regex_replace(
+            r'("Signature":"MiviThirdJpegr"[\s\S]*?"Name": "persist\.vendor\.camera\.sdk\.third\.jpegr\.enable",\s*"Value": )"1"',
+            r'\1"0"'
+        ),
+    'odm/etc/camera/mihal_overlap/overlap_config.json': blob_fixup()
+        .regex_replace(
+            r'"CAMX__JPEGR_STREAM_CONFIG_SIZES_3Party_FRONT": \[[\s\S]*?\n    \],',
+            '"CAMX__JPEGR_STREAM_CONFIG_SIZES_3Party_FRONT": [],'
+        )
+        .regex_replace(
+            r'"CAMX__JPEGR_STREAM_CONFIG_SIZES_3Party_REAR": \[[\s\S]*?\n    \],',
+            '"CAMX__JPEGR_STREAM_CONFIG_SIZES_3Party_REAR": [],'
+        ),
 }
 
 module = ExtractUtilsModule(

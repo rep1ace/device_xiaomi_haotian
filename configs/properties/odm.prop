@@ -39,6 +39,9 @@ vendor.display.force_lm_to_fb_config=1
 vendor.display.support_mafr_feature=1
 vendor.mi_sf.enable_second_refresh_rate_overlay=1
 
+# Camera
+persist.vendor.camera.sdk.third.jpegr.enable=0
+
 # Fingerprint
 persist.vendor.fingerprint.type=udfps
 persist.vendor.fingerprint.sensor_location=720|2480|134

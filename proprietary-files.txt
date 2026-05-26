@@ -254,7 +254,6 @@ odm/firmware/cs35l43-dsp1-spk-prot.wmfw
 
 # Camera Resources
 odm/etc/camera/af_class_all.dlc
-odm/etc/camera/af_class_all.dlc
 odm/etc/camera/af_class_human.dlc
 odm/etc/camera/af_classify.dlc
 odm/etc/camera/af_detect_1st.dlc
@@ -2408,7 +2407,7 @@ odm/lib64/camera/com.qti.eeprom.haotian_semco_imx858_sem1217s_tele5x_i_eeprom.so
 odm/lib64/camera/com.qti.eeprom.haotian_semco_ovx9100_p24u128b_wide_ii_eeprom.so
 odm/lib64/camera/com.qti.eeprom.haotian_sunny_imx858_p24u128b_tele5x_ii_eeprom.so
 odm/lib64/camera/com.qti.eeprom.haotian_sunny_ov32b40_gt24p64e_front_i_eeprom.so
-odm/lib64/camera/com.qti.ofe.profiledb.default.bin
+odm/lib64/camera/com.qti.ofe.profiledb.default.bin;SYMLINK=vendor/lib64/camera/com.qti.ofe.profiledb.default.bin
 odm/lib64/camera/com.qti.ois.haotian_semco_imx858_sem1217s_tele5x_i_ois.so
 odm/lib64/camera/com.qti.ois.haotian_sunny_imx858_bu24619_tele5x_ii_ois.so
 odm/lib64/camera/com.qti.sensor.haotian_ofilm_ovx9100_wide_i.so
@@ -2642,6 +2641,7 @@ odm/lib64/libcom.xiaomi.debug.so
 odm/lib64/libcom.xiaomi.ecoenginemonitor.so
 odm/lib64/libcom.xiaomi.eventcallback.so
 odm/lib64/libcom.xiaomi.grallocutils.so
+odm/lib64/libcom.xiaomi.ionutils.so
 odm/lib64/libcom.xiaomi.mawutils.so
 odm/lib64/libcom.xiaomi.mawutilsold.so
 odm/lib64/libcom.xiaomi.metadatautils.so
@@ -2662,6 +2662,7 @@ odm/lib64/libfastmessage.so
 odm/lib64/libFS.so
 odm/lib64/libfuai_camera_alg.so
 odm/lib64/libhandgesture.arcsoft.so
+odm/lib64/libmpbase.so
 odm/lib64/libharbo.so
 odm/lib64/libhdr10plus.so
 odm/lib64/libheichal.so
@@ -2715,6 +2716,7 @@ odm/lib64/libmialgoengine_custom.so
 odm/lib64/libmialgoengine.so
 odm/lib64/libmicamera_adapter.so
 odm/lib64/libmicamera_aidl_device.so
+odm/lib64/libmicamera_fps_checker.so
 odm/lib64/libmicamera_aidl_provider.so
 odm/lib64/libmicamera_aidl_utils.so
 odm/lib64/libmicamera_hal_core.so
@@ -2784,6 +2786,7 @@ odm/lib64/libTrueSight.so
 odm/lib64/libubifocus.so
 odm/lib64/libvega_common.so
 odm/lib64/libvideoml.so
+odm/lib64/libwa_opticalzoom_fusion.so
 odm/lib64/libwa_widelens_undistort.so
 odm/lib64/libxmi_slow_motion_mein.so
 odm/lib64/vendor.qti.hardware.camera.aon-service-impl.so
