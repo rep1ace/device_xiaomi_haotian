@@ -25,9 +25,9 @@ PRODUCT_MODEL := 2410DPN6CC
 PRODUCT_MANUFACTURER := xiaomi
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    BuildDesc=$(call normalize-path-list, "haotian haotian 16 BP2A.250605.031.A3 OS3.0.5.0.WOBCNXM:user release-keys")
+    BuildDesc=$(call normalize-path-list, "haotian haotian 16 BP2A.250605.031.A3 OS3.0.302.0.WOBCNXM:user release-keys")
 
-BUILD_FINGERPRINT := Xiaomi/haotian/haotian:16/BP2A.250605.031.A3/OS3.0.5.0.WOBCNXM:user/release-keys
+BUILD_FINGERPRINT := Xiaomi/haotian/haotian:16/BP2A.250605.031.A3/OS3.0.302.0.WOBCNXM:user/release-keys
 
 # GMS
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
