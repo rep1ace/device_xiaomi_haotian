@@ -146,6 +146,19 @@ blob_fixups: blob_fixups_user_type = {
             r'"CAMX__JPEGR_STREAM_CONFIG_SIZES_3Party_REAR": \[[\s\S]*?\n    \],',
             '"CAMX__JPEGR_STREAM_CONFIG_SIZES_3Party_REAR": [],'
         ),
+    'odm/etc/sensors/config/sm8750_tcs3720_fb.json': blob_fixup()
+        .regex_replace(
+            r'"near_threshold":\{ "type": "flt", "ver": "[0-9]+",\n          "data": "(?:140\.0|105\.0|105)"\n        \}',
+            '"near_threshold":{ "type": "flt", "ver": "3",\n          "data": "90.0"\n        }',
+        )
+        .regex_replace(
+            r'"far_threshold":\{ "type": "flt", "ver": "[0-9]+",\n          "data": "(?:80\.0|65\.0|65)"\n        \}',
+            '"far_threshold":{ "type": "flt", "ver": "3",\n          "data": "55.0"\n        }',
+        )
+        .regex_replace(
+            r'"parm0":\{ "type": "flt", "ver": "[0-9]+",\n          "data": "(?:130\.0|105\.0|105)"\n        \}',
+            '"parm0":{ "type": "flt", "ver": "2",\n          "data": "90.0"\n        }',
+        ),
 }
 
 module = ExtractUtilsModule(
