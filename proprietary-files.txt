@@ -2,8 +2,8 @@
 ## are from Xiaomi 15 pro (OS3.0.5.0.WOBCNXM). 
 
 # ACDB
-odm/etc/acdbdata/Mi/Mi_acdb_cal.acdb:odm/etc/acdbdata/Mi_acdb_cal.acdb
-odm/etc/acdbdata/Mi/Mi_workspaceFileXml.qwsp:odm/etc/acdbdata/Mi_workspaceFileXml.qwsp
+odm/etc/acdbdata/Mi/Mi_acdb_cal.acdb
+odm/etc/acdbdata/Mi/Mi_workspaceFileXml.qwsp
 odm/etc/acdbdata/Mi/Ext_AiOff_fixed.eai
 odm/etc/acdbdata/Mi/Ext_fixed_v5.eai
 odm/etc/acdbdata/Mi/model924k_eai_int8_8750.eai
@@ -199,7 +199,7 @@ odm/lib64/bm5a79v08s13n90.bin
 odm/lib64/rfs/dsp/libapn_dsp_skel.so
 odm/lib64/rfs/dsp/libbitml_nsp_73na_skel.so;SYMLINK=vendor/lib64/rfs/dsp/libbitml_nsp_73na_skel.so
 odm/lib64/rfs/dsp/libbitml_nsp_79na_skel.so;SYMLINK=vendor/lib64/rfs/dsp/libbitml_nsp_79na_skel.so
-odm/lib64/rfs/dsp/libbitml_nsp_skel.so;SYMLINK=vendor/lib64/rfs/dsp/libdpp_engine_skel.so
+odm/lib64/rfs/dsp/libbitml_nsp_skel.so
 odm/lib64/rfs/dsp/libhdr_skel.so
 odm/lib64/rfs/dsp/libqsegnetengine_dsp_skel.so;SYMLINK=vendor/lib64/rfs/dsp/libqsegnetengine_dsp_skel.so
 vendor/lib/rfsa/adsp/activity.napp_header;MODULE=activity.napp_header
@@ -2591,6 +2591,7 @@ odm/lib64/libAncHumanPreviewBokeh.so
 odm/lib64/libaidenoiser.so
 odm/lib64/libaidenoiserv2.so
 odm/lib64/libailab_rawhdr.so
+odm/lib64/libanc_dc_plugin_xiaomi_v3.so
 odm/lib64/libanc_edof_checker.so
 odm/lib64/libanc_edof.so
 odm/lib64/libanc_objdetection.so
@@ -2607,7 +2608,6 @@ odm/lib64/libarcsoft_turbo_hdr_grf.so
 odm/lib64/libarcsoft_turbo_hdr_raw_portrait.so
 odm/lib64/libbitmlengine.so
 odm/lib64/libbitmlenginev2.so
-odm/lib64/libc++_shared.so
 odm/lib64/libcalculator.so;FIX_SONAME
 odm/lib64/libcamera_scene.so
 odm/lib64/libcameraheif.so

@@ -41,6 +41,10 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/lib64/libcameraopt.so',
     ): blob_fixup().add_needed('libprocessgroup_shim.so'),
     (
+        'odm/lib64/libanc_dc_plugin_xiaomi_v3.so',
+    ): blob_fixup()
+        .add_needed('libc++_shared.so'),
+    (
         'odm/lib64/libMiEmojiEffect.so',
         'odm/lib64/libMiVideoFilter.so',
         'odm/lib64/libAncHumanPreviewBokeh.so',
