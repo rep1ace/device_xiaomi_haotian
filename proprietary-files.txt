@@ -2890,13 +2890,11 @@ odm/etc/display/B_Com_Gary_Gain.csv
 odm/etc/display/G_Com_Gary_Gain.csv
 odm/etc/display/qdcm_calib_data_xiaomi_o2_42_02_0a_cmd_mode_dsc_dsi_panel.json
 odm/etc/display/R_Com_Gary_Gain.csv
+odm/etc/mdss_dsi_o2_42_02_0a_dsc_cmd_mi.xml
 
 # Dolby Vision
-odm/etc/surfaceflinger/dolby_vision.cfg
-odm/vendor/etc/dolby_vision.cfg
 odm/vendor/etc/videobox.json
 odm/vendor/etc/videoCodecCapability.json
-odm/vendor/persist/display/dolby_vision.cfg
 
 # Fingerprint
 odm/lib64/hw/fingerprint.goodix_us.so:odm/lib64/hw/fingerprint.goodix_us.default.so;FIX_SONAME
