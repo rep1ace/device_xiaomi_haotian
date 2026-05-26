@@ -251,6 +251,15 @@ odm/firmware/T-cs35l43-delta-music-spk-prot.bin
 odm/firmware/T-cs35l43-delta-voice-spk-prot.bin
 odm/firmware/T-cs35l43-dsp1-spk-prot.bin
 odm/firmware/cs35l43-dsp1-spk-prot.wmfw
+odm/firmware/cs40l26-a2h.bin
+odm/firmware/cs40l26-a2h1.bin
+odm/firmware/cs40l26-calib.bin
+odm/firmware/cs40l26-calib.wmfw
+odm/firmware/cs40l26-dbc.bin
+odm/firmware/cs40l26-dvl.bin
+odm/firmware/cs40l26-svc.bin
+odm/firmware/cs40l26.bin
+odm/firmware/cs40l26.wmfw
 
 # Camera Resources
 odm/etc/camera/af_class_all.dlc
