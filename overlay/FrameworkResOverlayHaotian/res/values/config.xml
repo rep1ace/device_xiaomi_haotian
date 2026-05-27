@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Stock haotian center punch-hole geometry, in physical display pixels. -->
+    <string name="config_mainBuiltInDisplayCutout" translatable="false">M 0,0 H -40.5 V 169 H 40.5 V 0 H 0 Z</string>
+</resources>

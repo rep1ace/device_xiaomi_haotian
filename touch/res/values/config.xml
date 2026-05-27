@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <bool name="config_edge_suppression_enabled">true</bool>
+
+    <!-- Haotian stock device_features edge suppression defaults. -->
+    <integer name="config_edge_suppression_absolute_width">5</integer>
+    <integer name="config_edge_suppression_condition_width">60</integer>
+
+    <integer-array name="config_edge_suppression_corner">
+        <item>180</item>
+        <item>400</item>
+        <item>280</item>
+        <item>280</item>
+    </integer-array>
+
+    <integer name="config_edge_suppression_rect_size">12</integer>
+    <integer name="config_edge_suppression_send_size">96</integer>
+</resources>
