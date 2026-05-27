@@ -25,6 +25,14 @@ final class EdgeSuppressionManager {
             "persist.vendor.touchfeature.lineage.edge_suppression.absolute_width";
     private static final String PROP_CONDITION_WIDTH =
             "persist.vendor.touchfeature.lineage.edge_suppression.condition_width";
+    private static final String PROP_PORTRAIT_CORNER_WIDTH =
+            "persist.vendor.touchfeature.lineage.edge_suppression.portrait_corner_width";
+    private static final String PROP_PORTRAIT_CORNER_HEIGHT =
+            "persist.vendor.touchfeature.lineage.edge_suppression.portrait_corner_height";
+    private static final String PROP_LANDSCAPE_CORNER_WIDTH =
+            "persist.vendor.touchfeature.lineage.edge_suppression.landscape_corner_width";
+    private static final String PROP_LANDSCAPE_CORNER_HEIGHT =
+            "persist.vendor.touchfeature.lineage.edge_suppression.landscape_corner_height";
 
     private static final int MODE_CORNER = 0;
     private static final int MODE_CONDITION = 1;
@@ -41,7 +49,10 @@ final class EdgeSuppressionManager {
     private final boolean mDefaultEnabled;
     private final int mDefaultAbsoluteWidth;
     private final int mDefaultConditionWidth;
-    private final int[] mCorner;
+    private final int mDefaultPortraitCornerWidth;
+    private final int mDefaultPortraitCornerHeight;
+    private final int mDefaultLandscapeCornerWidth;
+    private final int mDefaultLandscapeCornerHeight;
     private final int mSendSize;
 
     EdgeSuppressionManager(Context context) {
@@ -53,7 +64,14 @@ final class EdgeSuppressionManager {
                 R.integer.config_edge_suppression_absolute_width);
         mDefaultConditionWidth = resources.getInteger(
                 R.integer.config_edge_suppression_condition_width);
-        mCorner = resources.getIntArray(R.array.config_edge_suppression_corner);
+        mDefaultPortraitCornerWidth = resources.getInteger(
+                R.integer.config_edge_suppression_portrait_corner_width);
+        mDefaultPortraitCornerHeight = resources.getInteger(
+                R.integer.config_edge_suppression_portrait_corner_height);
+        mDefaultLandscapeCornerWidth = resources.getInteger(
+                R.integer.config_edge_suppression_landscape_corner_width);
+        mDefaultLandscapeCornerHeight = resources.getInteger(
+                R.integer.config_edge_suppression_landscape_corner_height);
         mSendSize = resources.getInteger(R.integer.config_edge_suppression_send_size);
     }
 
@@ -105,10 +123,10 @@ final class EdgeSuppressionManager {
         int[] index = new int[] {0};
 
         int maxWidth = Math.max(0, screenWidth / 2);
-        int absoluteWidth = clamp(SystemProperties.getInt(PROP_ABSOLUTE_WIDTH,
-                mDefaultAbsoluteWidth), 0, maxWidth);
-        int conditionWidth = clamp(SystemProperties.getInt(PROP_CONDITION_WIDTH,
-                mDefaultConditionWidth), 0, maxWidth);
+        int absoluteWidth = getClampedProperty(PROP_ABSOLUTE_WIDTH, mDefaultAbsoluteWidth,
+                maxWidth);
+        int conditionWidth = getClampedProperty(PROP_CONDITION_WIDTH, mDefaultConditionWidth,
+                maxWidth);
 
         if (rotation == Surface.ROTATION_90 || rotation == Surface.ROTATION_270) {
             setRectPointForHorizontal(values, index, screenWidth, screenHeight, absoluteWidth,
@@ -151,10 +169,14 @@ final class EdgeSuppressionManager {
 
     private void setCornerRectPoint(int[] values, int[] index, int screenWidth, int screenHeight,
             int rotation) {
-        int portraitWidth = getCorner(0, screenWidth);
-        int portraitHeight = getCorner(1, screenHeight);
-        int landscapeWidth = getCorner(2, screenWidth);
-        int landscapeHeight = getCorner(3, screenHeight);
+        int portraitWidth = getClampedProperty(PROP_PORTRAIT_CORNER_WIDTH,
+                mDefaultPortraitCornerWidth, screenWidth);
+        int portraitHeight = getClampedProperty(PROP_PORTRAIT_CORNER_HEIGHT,
+                mDefaultPortraitCornerHeight, screenHeight);
+        int landscapeWidth = getClampedProperty(PROP_LANDSCAPE_CORNER_WIDTH,
+                mDefaultLandscapeCornerWidth, screenWidth);
+        int landscapeHeight = getClampedProperty(PROP_LANDSCAPE_CORNER_HEIGHT,
+                mDefaultLandscapeCornerHeight, screenHeight);
 
         switch (rotation) {
             case Surface.ROTATION_90:
@@ -193,9 +215,8 @@ final class EdgeSuppressionManager {
         }
     }
 
-    private int getCorner(int index, int max) {
-        int value = index < mCorner.length ? mCorner[index] : 0;
-        return clamp(value, 0, max);
+    private static int getClampedProperty(String property, int defaultValue, int max) {
+        return clamp(SystemProperties.getInt(property, defaultValue), 0, max);
     }
 
     private static void addRect(int[] values, int[] index, int type, int position, int left,

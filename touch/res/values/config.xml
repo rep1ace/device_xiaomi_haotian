@@ -9,13 +9,25 @@
 
     <!-- Haotian stock device_features edge suppression defaults. -->
     <integer name="config_edge_suppression_absolute_width">5</integer>
-    <integer name="config_edge_suppression_condition_width">60</integer>
+    <integer name="config_edge_suppression_condition_width">80</integer>
 
+    <integer name="config_edge_suppression_portrait_corner_width">250</integer>
+    <integer name="config_edge_suppression_portrait_corner_height">400</integer>
+    <integer name="config_edge_suppression_landscape_corner_width">280</integer>
+    <integer name="config_edge_suppression_landscape_corner_height">280</integer>
+
+    <!-- Full stock reference: 180,400,280,280,150,300,250,400,180,400. -->
     <integer-array name="config_edge_suppression_corner">
         <item>180</item>
         <item>400</item>
         <item>280</item>
         <item>280</item>
+        <item>150</item>
+        <item>300</item>
+        <item>250</item>
+        <item>400</item>
+        <item>180</item>
+        <item>400</item>
     </integer-array>
 
     <integer name="config_edge_suppression_rect_size">12</integer>
