@@ -23,6 +23,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     HaotianTouch
 
+# Vibrator
+PRODUCT_PACKAGES += \
+    android.hardware.vibrator-service.xiaomi-sm8750
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)

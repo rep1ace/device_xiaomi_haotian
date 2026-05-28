@@ -1,0 +1,21 @@
+cc_binary {
+    name: "android.hardware.vibrator-service.xiaomi-sm8750",
+    relative_install_path: "hw",
+    vendor: true,
+    cflags: [
+        "-Wall",
+        "-Werror",
+    ],
+    init_rc: ["android.hardware.vibrator-service.xiaomi-sm8750.rc"],
+    vintf_fragments: ["android.hardware.vibrator-service.xiaomi-sm8750.xml"],
+    srcs: [
+        "Vibrator.cpp",
+        "service.cpp",
+    ],
+    shared_libs: [
+        "android.hardware.vibrator-V2-ndk",
+        "libbase",
+        "libbinder_ndk",
+        "liblog",
+    ],
+}

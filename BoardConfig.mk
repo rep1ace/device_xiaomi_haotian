@@ -10,6 +10,9 @@ KERNEL_PATH := $(DEVICE_PATH)-kernel
 # Inherit from sm8650-common
 include device/xiaomi/sm8750-common/BoardConfigCommon.mk
 
+# Sepolicy
+BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
+
 # Display
 TARGET_SCREEN_DENSITY := 600
 

@@ -1,0 +1,5 @@
+service vendor.vibrator-cs40l26 /vendor/bin/hw/android.hardware.vibrator-service.xiaomi-sm8750
+    class hal
+    user system
+    group system input
+    interface aidl android.hardware.vibrator.IVibrator/default

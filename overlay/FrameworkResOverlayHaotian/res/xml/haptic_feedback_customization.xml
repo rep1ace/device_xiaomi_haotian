@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<haptic-feedback-constants>
+    <!-- KEYBOARD_TAP / KEYBOARD_PRESS -->
+    <constant id="3">
+        <vibration-effect>
+            <primitive-effect name="low_tick" />
+        </vibration-effect>
+    </constant>
+
+    <!-- KEYBOARD_RELEASE -->
+    <constant id="7">
+        <vibration-effect>
+            <primitive-effect name="low_tick" />
+        </vibration-effect>
+    </constant>
+</haptic-feedback-constants>
