@@ -5,13 +5,13 @@
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources>
-    <bool name="config_edge_suppression_enabled">true</bool>
+    <bool name="config_edge_suppression_enabled">false</bool>
 
-    <!-- Haotian stock device_features edge suppression defaults. -->
+    <!-- Stock geometry retained for opt-in diagnostics; default mode 15 is disabled. -->
     <integer name="config_edge_suppression_absolute_width">5</integer>
-    <integer name="config_edge_suppression_condition_width">80</integer>
+    <integer name="config_edge_suppression_condition_width">60</integer>
 
-    <integer name="config_edge_suppression_portrait_corner_width">250</integer>
+    <integer name="config_edge_suppression_portrait_corner_width">180</integer>
     <integer name="config_edge_suppression_portrait_corner_height">400</integer>
     <integer name="config_edge_suppression_landscape_corner_width">280</integer>
     <integer name="config_edge_suppression_landscape_corner_height">280</integer>
