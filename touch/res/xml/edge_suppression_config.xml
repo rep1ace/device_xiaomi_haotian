@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edgesuppressions>
+    <edgesuppressionitem absoluteSize="0" conditionSize="50" connerHeight="300" connerWidth="150" isHorizontal="0" type="default_suppression" />
+    <edgesuppressionitem absoluteSize="0" conditionSize="50" connerHeight="170" connerWidth="170" isHorizontal="1" type="default_suppression" />
+    <edgesuppressionitem absoluteSize="0" conditionSize="30" connerHeight="300" connerWidth="150" isHorizontal="0" type="wake_suppression" />
+    <edgesuppressionitem absoluteSize="0" conditionSize="30" connerHeight="170" connerWidth="170" isHorizontal="1" type="wake_suppression" />
+    <edgesuppressionitem absoluteSize="1" conditionSize="60" connerHeight="300" connerWidth="150" isHorizontal="0" type="strong_suppression" />
+    <edgesuppressionitem absoluteSize="1" conditionSize="60" connerHeight="170" connerWidth="170" isHorizontal="1" type="strong_suppression" />
+    <edgesuppressionitem connerHeight="300" connerWidth="150" isHorizontal="0" maxAbsoluteSize="1" maxConditionSize="80" minAbsoluteSize="0" minConditionSize="10" type="custom_suppression" />
+    <edgesuppressionitem connerHeight="170" connerWidth="170" isHorizontal="1" maxAbsoluteSize="1" maxConditionSize="80" minAbsoluteSize="0" minConditionSize="10" type="custom_suppression" />
+</edgesuppressions>

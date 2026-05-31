@@ -5,31 +5,8 @@
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources>
-    <bool name="config_edge_suppression_enabled">false</bool>
+    <bool name="config_edge_suppression_enabled">true</bool>
+    <integer name="config_edge_suppression_max_adjust_value">60</integer>
 
-    <!-- Stock geometry retained for opt-in diagnostics; default mode 15 is disabled. -->
-    <integer name="config_edge_suppression_absolute_width">5</integer>
-    <integer name="config_edge_suppression_condition_width">60</integer>
-
-    <integer name="config_edge_suppression_portrait_corner_width">180</integer>
-    <integer name="config_edge_suppression_portrait_corner_height">400</integer>
-    <integer name="config_edge_suppression_landscape_corner_width">280</integer>
-    <integer name="config_edge_suppression_landscape_corner_height">280</integer>
-
-    <!-- Full stock reference: 180,400,280,280,150,300,250,400,180,400. -->
-    <integer-array name="config_edge_suppression_corner">
-        <item>180</item>
-        <item>400</item>
-        <item>280</item>
-        <item>280</item>
-        <item>150</item>
-        <item>300</item>
-        <item>250</item>
-        <item>400</item>
-        <item>180</item>
-        <item>400</item>
-    </integer-array>
-
-    <integer name="config_edge_suppression_rect_size">12</integer>
     <integer name="config_edge_suppression_send_size">96</integer>
 </resources>
